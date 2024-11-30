@@ -30,7 +30,10 @@ const PageTransitionWrapper = styled('div')({
 
 const DrawerStyled = styled(Drawer)(({ theme }) => ({
   '& .MuiDrawer-paper': {
+    backgroundImage: 'linear-gradient(to right, #002B5B, #00588A)', // Apply gradient background
+    color: '#E1E9F1', // Set text color
     width: '250px',
+    border: 'none', // Optional: Remove border
   },
 }));
 

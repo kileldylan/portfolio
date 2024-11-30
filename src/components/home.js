@@ -188,22 +188,6 @@ const Home = () => {
                   deployment, ensuring robust code, efficient workflows, and effective collaboration within
                   cross-functional teams.
                 </Typography>
-                <Button
-                variant="contained"
-                size="large"
-                sx={{
-                  borderRadius: '20px',
-                  padding: '8px 16px',
-                  background: 'linear-gradient(to right, #0074B7, #00588A)',
-                  color: '#FFFFFF',
-                  '&:hover': {
-                    background: 'linear-gradient(to right, #00588A, #002B5B)',
-                  },
-                }}
-                href= '#projects'
-              >
-                View My Work
-              </Button>
               </Grid>
               <Grid item xs={12} md={6}>
                 <img
