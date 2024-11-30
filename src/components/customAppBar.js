@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { styled } from '@mui/system';
 import MenuIcon from '@mui/icons-material/Menu'; // Icon for hamburger menu
 import { CSSTransition } from 'react-transition-group'; // Add this import
@@ -30,7 +29,7 @@ const PageTransitionWrapper = styled('div')({
 
 const DrawerStyled = styled(Drawer)(({ theme }) => ({
   '& .MuiDrawer-paper': {
-    backgroundImage: 'linear-gradient(to right, #002B5B, #00588A)', // Apply gradient background
+    backgroundImage: 'linear-gradient(to right, #00588A, #66A3D2)', // Lighter gradient
     color: '#E1E9F1', // Set text color
     width: '250px',
     border: 'none', // Optional: Remove border
@@ -44,6 +43,11 @@ const CustomAppBar = () => {
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
   };
+
+  // Scroll to the top of the page on navigation
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top of the page
+  }, [location]);
 
   return (
     <>
