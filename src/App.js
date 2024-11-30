@@ -8,6 +8,7 @@ import EducationPage from './components/education';
 import ContactPage from './components/contact';
 import '@fontsource/montserrat'; // Import Montserrat font
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const App = () => {
   return (
@@ -24,6 +25,8 @@ const App = () => {
         </Routes>
         {/* Add Vercel Analytics */}
         <Analytics />
+        <SpeedInsights />
+                
       </div>
     </Router>
   );
