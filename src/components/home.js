@@ -10,6 +10,7 @@ import {
   Box,
   Chip,
 } from '@mui/material';
+import { Helmet } from 'react-helmet';
 import { styled } from '@mui/system';
 import heroImage from './assets/kilel.jpg';
 import projectImage1 from './assets/cloudhaven.jpg';
@@ -152,6 +153,34 @@ const Home = () => {
   return (
     <div>
       <ThemeProvider theme={theme}>
+
+        {/* Helmet for managing <head> */}
+        <Helmet>
+          {/* Page Title */}
+          <title>Deelan Kilel | Web Developer Portfolio</title>
+
+          {/* Meta Description */}
+          <meta
+            name="description"
+            content="Deelan Kilel - A passionate web developer specializing in React, Node.js, and innovative digital solutions. Explore my projects and experience."
+          />
+
+          {/* JSON-LD Structured Data */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Deelan Kilel",
+              "jobTitle": "Web Developer",
+              "url": "https://deelankilel.vercel.app",
+              "sameAs": [
+                "https://www.linkedin.com/in/deelan-kilel",
+                "https://github.com/deelankilel"
+              ]
+            })}
+          </script>
+        </Helmet>
+
         {/* Global styles */}
         <GlobalStyles
           styles={{
