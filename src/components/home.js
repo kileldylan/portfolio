@@ -23,14 +23,14 @@ import { GlobalStyles, CssBaseline, ThemeProvider, createTheme } from '@mui/mate
 const HeroSection = styled(Box)(({ theme }) => ({
   backgroundImage: 'linear-gradient(to right, #002B5B, #00588A)',
   color: '#E1E9F1',
-  padding: '30px 20px',
+  padding: '20px 15px', // Reduced padding for better responsiveness
   textAlign: 'center',
-  minHeight: '60vh',
+  minHeight: '40vh', // Adjusted height for smaller appearance
   display: 'flex',
   alignItems: 'center',
   [theme.breakpoints.down('sm')]: {
-    minHeight: '50vh', // Adjust min-height for smaller screens
-    padding: '20px 10px', // Less padding on small screens
+    minHeight: '30vh', // Reduced height for small devices
+    padding: '10px', // Less padding on small screens
   },
 }));
 
@@ -178,9 +178,6 @@ const Home = () => {
                 <Typography variant="h3" gutterBottom>
                   Hi, I'm Deelan Kilel
                 </Typography>
-                <Typography variant="h6" sx={{ marginBottom: 2 }}>
-                  Crafting Scalable and Efficient Software Solutions
-                </Typography>
                 <Typography variant="body1" sx={{ marginBottom: 2 }}>
                   Proficient and versatile Software Developer with extensive experience in front-end
                   development using React and back-end development with Node.js and Express. Skilled in
@@ -189,9 +186,7 @@ const Home = () => {
                   management and experienced in building dynamic, feature-rich systems that align with
                   modern web standards. Demonstrated ability to take projects from concept through to
                   deployment, ensuring robust code, efficient workflows, and effective collaboration within
-                  cross-functional teams. Recognized for my meticulous attention to detail and dedication to
-                  expanding technical expertise, including ongoing learning in advanced frameworks and
-                  languages.
+                  cross-functional teams.
                 </Typography>
                 <Button
                 variant="contained"

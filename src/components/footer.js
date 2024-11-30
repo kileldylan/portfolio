@@ -7,7 +7,7 @@ import { Link as RouterLink } from 'react-router-dom';
 const FooterContainer = styled(Box)(({ theme }) => ({
   backgroundImage: 'linear-gradient(to right, #002B5B, #00588A)', // Same gradient as HeroSection
   color: '#E1E9F1', // Same text color as HeroSection
-  padding: '2rem 0',
+  padding: '1rem 0', // Reduced padding
   marginTop: 'auto', // Ensures it stays at the bottom
   textAlign: 'center', // Centers the footer content
   borderTop: `1px solid ${theme.palette.divider}`, // Optional: Adds a top border for separation
@@ -33,13 +33,13 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <Grid container spacing={4} justifyContent="center">
-        {/* Left Section - Personal Info */}
+<Grid container spacing={2} justifyContent="center"> 
+{/* Left Section - Personal Info */}
         <Grid item xs={12} sm={6} md={4}>
-          <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#ECF0F1' }}>
+          <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#ECF0F1', fontSize: '1.2rem' }}>
             Deelan Kilel
           </Typography>
-          <Typography variant="body2" sx={{ color: '#BDC3C7' }}>
+          <Typography variant="body2" sx={{ color: '#BDC3C7', fontSize: '0.875rem' }}>
             Software Developer | Problem Solver | Tech Enthusiast
           </Typography>
           <Typography variant="body2" sx={{ color: '#BDC3C7', marginTop: 1 }}>
