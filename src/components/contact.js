@@ -32,7 +32,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Arial, sans-serif',
+    fontFamily: 'Montserrat, Arial, sans-serif', // Set Montserrat as the global font
   },
 });
 

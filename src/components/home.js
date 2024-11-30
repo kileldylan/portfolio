@@ -20,7 +20,7 @@ import Footer from './footer';
 import { GlobalStyles, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
 // Custom styling for Hero Section
-const HeroSection = styled(Box)({
+const HeroSection = styled(Box)(({ theme }) => ({
   backgroundImage: 'linear-gradient(to right, #002B5B, #00588A)',
   color: '#E1E9F1',
   padding: '30px 20px',
@@ -28,7 +28,11 @@ const HeroSection = styled(Box)({
   minHeight: '60vh',
   display: 'flex',
   alignItems: 'center',
-});
+  [theme.breakpoints.down('sm')]: {
+    minHeight: '50vh', // Adjust min-height for smaller screens
+    padding: '20px 10px', // Less padding on small screens
+  },
+}));
 
 const SkillsSection = styled(Box)({
   backgroundImage: 'linear-gradient(to right, #002B5B, #00588A)', // Same gradient as HeroSection
@@ -138,7 +142,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Arial, sans-serif',
+    fontFamily: 'Montserrat, Arial, sans-serif', // Set Montserrat as the global font
   },
 });
 

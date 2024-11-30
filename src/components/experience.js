@@ -58,8 +58,8 @@ const projects = [
     contributions: [
       'Developed the “Explore Amenities” and “Booking” modules featuring local attractions, user reviews, and availability filters.',
     ],
-    techStack: 'React, Node.js, Express.js, MySQL',
-    result: 'Delivered a seamless user interface that enabled real-time reservation updates and facility exploration, enhancing the guest experience.',
+    techStack: 'Flutter, Node.js, Express.js, MySQL',
+    result: 'Delivered a s  eamless user interface that enabled real-time reservation updates and facility exploration, enhancing the guest experience.',
   },
   {
     title: 'Point of Sale (POS) & Inventory Management System',
