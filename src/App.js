@@ -7,18 +7,24 @@ import ExperiencePage from './components/experience';
 import EducationPage from './components/education';
 import ContactPage from './components/contact';
 import '@fontsource/montserrat'; // Import Montserrat font
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutMe />} />
-        <Route path="/projects" element={<ProjectPage />} />
-        <Route path="/experience" element={<ExperiencePage />} />
-        <Route path="/education" element={<EducationPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
+      <div>
+        {/* Define your app structure */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/education" element={<EducationPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+        {/* Add Vercel Analytics */}
+        <Analytics />
+      </div>
     </Router>
   );
 };
