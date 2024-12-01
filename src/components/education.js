@@ -15,6 +15,13 @@ const EducationPage = () => {
       description: 'Focused on backend development and API integration.',
     },
     {
+      title: 'Certificate in Sales and Business Development',
+      school: 'Yusudi Sales Academy',
+      dates: 'August 2023 - October 2023',
+      description: 'Enhanced sales and business development skills.',
+    },
+  ];
+    {
       title: 'Diploma in Software Engineering',
       school: 'Kenya Institute of Software Engineering',
       dates: '2021 - 2023',
@@ -26,13 +33,6 @@ const EducationPage = () => {
       dates: '2016 - 2019',
       description: 'Completed high school with a focus on sciences and mathematics.',
     },
-    {
-      title: 'Certificate in Sales and Business Development',
-      school: 'Yusudi Sales Academy',
-      dates: 'August 2023 - October 2023',
-      description: 'Enhanced sales and business development skills.',
-    },
-  ];
 
   const theme = createTheme({
     palette: {
