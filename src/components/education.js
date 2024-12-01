@@ -20,7 +20,6 @@ const EducationPage = () => {
       dates: 'August 2023 - October 2023',
       description: 'Enhanced sales and business development skills.',
     },
-  ];
     {
       title: 'Diploma in Software Engineering',
       school: 'Kenya Institute of Software Engineering',
@@ -33,6 +32,7 @@ const EducationPage = () => {
       dates: '2016 - 2019',
       description: 'Completed high school with a focus on sciences and mathematics.',
     },
+  ];
 
   const theme = createTheme({
     palette: {
