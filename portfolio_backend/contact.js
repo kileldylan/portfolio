@@ -12,8 +12,10 @@ export default function handler(req, res) {
       database: process.env.DB_NAME,
     });
 
+    
     connection.connect((err) => {
       if (err) {
+        console.error('Database connection failed:', err);
         res.status(500).json({ error: 'Database connection failed' });
         return;
       }
@@ -21,6 +23,7 @@ export default function handler(req, res) {
       const query = 'INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)';
       connection.query(query, [name, email, message], (err, result) => {
         if (err) {
+          console.log({ name, email, message });
           res.status(500).json({ error: 'Failed to save data' });
         } else {
           res.status(200).json({ message: 'Message sent successfully' });
