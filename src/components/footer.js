@@ -11,7 +11,6 @@ const FooterContainer = styled(Box)(({ theme }) => ({
   marginTop: 'auto', // Ensures it stays at the bottom
   textAlign: 'center', // Centers the footer content
   borderTop: `1px solid ${theme.palette.divider}`, // Optional: Adds a top border for separation
-  borderRadius: '8px', // Optional: Rounds the corners for a smoother look
 }));
 
 const SocialIcons = styled(IconButton)({
