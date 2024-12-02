@@ -71,19 +71,29 @@ const ContactPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
   
-    const response = await fetch('/portfolio_backend/server', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message })
-    });
+    const { name, email, message } = formData; // Destructure from formData state
   
-    const result = await response.json();
-    if (response.ok) {
-      alert(result.message);
-    } else {
-      alert(result.error);
+    try {
+      const response = await fetch('/portfolio_backend/server', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
+  
+      const result = await response.json();
+      if (response.ok) {
+        setSnackbar({ open: true, message: result.message, severity: 'success' });
+      } else {
+        setSnackbar({ open: true, message: result.error, severity: 'error' });
+      }
+    } catch (error) {
+      setSnackbar({
+        open: true,
+        message: 'An error occurred while sending your message. Please try again later.',
+        severity: 'error',
+      });
     }
-  };
+  };  
   
 
   return (
