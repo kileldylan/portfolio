@@ -68,39 +68,23 @@ const ContactPage = () => {
 
   const handleCloseSnackbar = () => setSnackbar({ ...snackbar, open: false });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSnackbar({
-          open: true,
-          message: 'Your message has been sent successfully!',
-          severity: 'success',
-        });
-        setFormData({ name: '', email: '', message: '' }); // Reset form
-      } else {
-        const errorData = await response.json();
-        setSnackbar({
-          open: true,
-          message: errorData.error || 'Failed to send your message.',
-          severity: 'error',
-        });
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setSnackbar({
-        open: true,
-        message: 'Something went wrong. Please try again later.',
-        severity: 'error',
-      });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    const response = await fetch('/portfolio_backend/server', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
+    });
+  
+    const result = await response.json();
+    if (response.ok) {
+      alert(result.message);
+    } else {
+      alert(result.error);
     }
   };
+  
 
   return (
     <ThemeProvider theme={theme}>

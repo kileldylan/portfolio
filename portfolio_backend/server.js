@@ -1,60 +1,33 @@
-const express = require('express');
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+import mysql from 'mysql';
 
-// Initialize Express app
-const app = express();
+export default function handler(req, res) {
+  if (req.method === 'POST') {
+    const { name, email, message } = req.body;
+    
+    // Example MySQL connection using environment variables
+    const connection = mysql.createConnection({
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
+    });
 
-// Middleware
-app.use(cors());
-app.use(bodyParser.json());
+    connection.connect((err) => {
+      if (err) {
+        res.status(500).json({ error: 'Database connection failed' });
+        return;
+      }
 
-// MySQL database connection
-const db = mysql.createConnection({
-  host: 'localhost', // Replace with your MySQL host
-  user: 'root', // Replace with your MySQL username
-  password: '', // Replace with your MySQL password
-  database: 'portfolio', // Replace with your database name
-});
-
-// Connect to the database
-db.connect((err) => {
-  if (err) {
-    console.error('MySQL connection error:', err);
-    process.exit(1);
+      const query = 'INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)';
+      connection.query(query, [name, email, message], (err, result) => {
+        if (err) {
+          res.status(500).json({ error: 'Failed to save data' });
+        } else {
+          res.status(200).json({ message: 'Message sent successfully' });
+        }
+      });
+    });
   } else {
-    console.log('Connected to MySQL database');
+    res.status(405).json({ error: 'Method not allowed' });
   }
-});
-
-// Test route
-app.get('/', (req, res) => {
-  res.send('Server is running');
-});
-
-// Handle form submission
-app.post('/api/contact', (req, res) => {
-  const { name, email, message } = req.body;
-
-  // Validate input
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: 'All fields are required' });
-  }
-
-  // Insert data into the database
-  const query = 'INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)';
-  db.query(query, [name, email, message], (err, result) => {
-    if (err) {
-      console.error('Error inserting data:', err);
-      return res.status(500).json({ error: 'Failed to save contact details' });
-    }
-    res.status(200).json({ message: 'Contact details saved successfully' });
-  });
-});
-
-// Start the server
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+}
