@@ -6,7 +6,7 @@ const dbConfig = {
   user: 'root',                     // Replace with your DB username
   password: 'eaOgStKMyXOpwtWxhGNUrFoEHHOqbejv',  // Replace with your DB password
   database: 'railway',              // Replace with your DB name
-  port: 20610                       // Replace with your DB port
+  port: 38145                       // Replace with your DB port
 };
 
 // Test connection
