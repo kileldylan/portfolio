@@ -76,7 +76,7 @@ const ContactPage = () => {
     try {
       const baseURL =
   process.env.NODE_ENV === 'production'
-    ? 'https://deelnakilel.vercel.app'
+    ? 'https://deelankilel.vercel.app'
     : 'http://localhost:3000';
 
       const response = await fetch(`${baseURL}/api/contact`, {
