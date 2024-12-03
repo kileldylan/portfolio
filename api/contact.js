@@ -1,28 +1,39 @@
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
 
-// Directly define database configuration
-const dbConfig = {
-  host: 'junction.proxy.rlwy.net',  // Replace with your host
-  user: 'root',                     // Replace with your DB username
-  password: 'eaOgStKMyXOpwtWxhGNUrFoEHHOqbejv',  // Replace with your DB password
-  database: 'railway',              // Replace with your DB name
-  port: 38145                       // Replace with your DB port
-};
+module.exports = async function handler(req, res) {
+  if (req.method === 'POST') {
+    const { name, email, message } = req.body;
 
-// Test connection
-(async function testConnection() {
-  try {
-    console.log('Attempting to connect to the database...');
-    const connection = mysql.createConnection(dbConfig);
-    connection.connect((err) => {
-      if (err) {
-        console.error('Database connection failed:', err);
-      } else {
-        console.log('Database connection successful!');
-      }
-      connection.end(); // Close the connection
-    });
-  } catch (error) {
-    console.error('Unexpected error:', error);
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: 'All fields are required.' });
+    }
+
+    try {
+      // Connect to the MySQL database
+      const connection = await mysql.createConnection({
+        host: process.env.MYSQLHOST, // From Vercel's environment variables
+        user: process.env.MYSQLUSER,
+        password: process.env.MYSQLPASSWORD,
+        database: process.env.MYSQL_DATABASE,
+        port: process.env.MYSQLPORT,
+      });
+
+      // Insert the contact form data into the database
+      const query = 'INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)';
+      await connection.execute(query, [name, email, message]);
+
+      // Close the connection
+      await connection.end();
+
+      // Respond with success
+      return res.status(200).json({ message: 'Message sent successfully!' });
+    } catch (error) {
+      console.error('Database error:', error);
+      return res.status(500).json({
+        error: 'Failed to send the message. Please try again later.',
+      });
+    }
+  } else {
+    return res.status(405).json({ error: 'Method not allowed.' });
   }
-})();
+};

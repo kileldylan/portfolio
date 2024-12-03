@@ -74,7 +74,12 @@ const ContactPage = () => {
     const { name, email, message } = formData; // Destructure from formData state
   
     try {
-      const response = await fetch('/api/contact', {
+      const baseURL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://deelnakilel.vercel.app'
+    : 'http://localhost:3000';
+
+      const response = await fetch(`${baseURL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message }),
@@ -90,7 +95,7 @@ const ContactPage = () => {
       setSnackbar({
         open: true,
         message: 'An error occurred while sending your message. Please try again later.',
-        severity: 'error',
+        severity: 'error',  
       });
     }
   };  
