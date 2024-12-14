@@ -11,11 +11,11 @@ module.exports = async function handler(req, res) {
     try {
       // Connect to the MySQL database
       const connection = await mysql.createConnection({
-        host: 'junction.proxy.rlwy.net',  // Replace with your host
-        user: 'root',                     // Replace with your DB username
-        password: 'eaOgStKMyXOpwtWxhGNUrFoEHHOqbejv',  // Replace with your DB password
-        database: 'railway',              // Replace with your DB name
-        port: 38145
+        host: process.env.MYSQLHOST, // From Vercel's environment variables
+        user: process.env.MYSQLUSER,
+        password: process.env.MYSQLPASSWORD,
+        database: process.env.MYSQL_DATABASE,
+        port: process.env.MYSQLPORT,
       });
 
       // Insert the contact form data into the database
