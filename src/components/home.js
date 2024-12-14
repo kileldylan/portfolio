@@ -12,10 +12,6 @@ import {
 } from '@mui/material';
 import { Helmet } from 'react-helmet';
 import { styled } from '@mui/system';
-import heroImage from './assets/kilel.jpg';
-import projectImage1 from './assets/cloudhaven.jpg';
-import projectImage2 from './assets/wahome_logo.jpg';
-import projectImage3 from './assets/Edulog.jpg';
 import CustomAppBar from './customAppBar';
 import Footer from './footer';
 import { GlobalStyles, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
@@ -83,7 +79,7 @@ const projects = [
     description:
       'A SaaS-based hotel management system that streamlines booking, user profiles, and hotel operations for small and large businesses.',
     tags: ['Flutter', 'Node.js', 'MySQL'],
-    image: projectImage1,
+    image: '/images/cloudhaven.jpg', // Updated to public path
     link: 'https://github.com/kileldylan/cloudhaven',
   },
   {
@@ -92,7 +88,7 @@ const projects = [
     description:
       'An automated attendance management system designed to simplify tracking and reporting for educational institutions.',
     tags: ['React', 'Node.js', 'MYSQL', 'API Design'],
-    image: projectImage2,
+    image: '/images/wahome_logo.jpg', // Updated to public path
     link: 'https://github.com/kileldylan/wahome_automotives',
   },
   {
@@ -101,7 +97,7 @@ const projects = [
     description:
       'A car sales platform that allows users to browse, filter, and connect with sellers for a seamless vehicle purchasing experience.',
     tags: ['React', 'Node.js', 'MySQL'],
-    image: projectImage3,
+    image: '/images/Edulog.jpg', // Updated to public path
     link: 'https://github.com/kileldylan/edulog_ameer',
   },
 ];
@@ -220,7 +216,7 @@ const Home = () => {
               </Grid>
               <Grid item xs={12} md={6}>
                 <img
-                  src={heroImage}
+                  src= '/images/kilel.jpg'
                   alt="Deelan Kilel"
                   loading="lazy"
                   style={{

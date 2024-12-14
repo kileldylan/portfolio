@@ -16,14 +16,7 @@ import CustomAppBar from './customAppBar'; // Assuming CustomAppBar is defined
 import Footer from './footer';
 import { createTheme } from '@mui/material/styles';
 
-// Project images
-import cloudhavenImage from './assets/cloudhaven.jpg';
-import wahomeImage from './assets/wahome_logo.jpg';
-import edulogImage from './assets/Edulog.jpg';
-import flowpayImage from './assets/Flowpay.jpg';
-import portfolioImage from './assets/portfolio-image.jpg';
-import electraImage from './assets/Electra.jpg';
-
+// Updated image references from public/images
 const theme = createTheme({
   palette: {
     primary: { main: '#3498DB' },
@@ -60,7 +53,7 @@ const ProjectPage = () => {
       description:
         'A point-of-sale system featuring product management, inventory tracking, and sales analytics. Built with robust data handling and seamless user interaction.',
       tags: ['React', 'Node.js', 'MySQL'],
-      image: flowpayImage,
+      image: '/images/Flowpay.jpg', // Updated to public path
       technologies: ['React', 'Node.js', 'MySQL'],
       role: 'Full Stack Developer',
       outcome: 'Improved client operational efficiency by 40%.',
@@ -72,7 +65,7 @@ const ProjectPage = () => {
       description:
         'A student attendance tracking app integrating real-time data entry and automated attendance reports.',
       tags: ['React', 'Node.js', 'MySQL'],
-      image: edulogImage,
+      image: '/images/Edulog.jpg', // Updated to public path
       technologies: ['React', 'Node.js', 'MySQL'],
       role: 'Full Stack Developer',
       outcome: 'Streamlined attendance logging for over 500 students.',
@@ -84,7 +77,7 @@ const ProjectPage = () => {
       description:
         'A dynamic website for Wahome Automotive, showcasing services, vehicle listings, and online appointment booking.',
       tags: ['React', 'Node.js', 'MySQL'],
-      image: wahomeImage,
+      image: '/images/wahome_logo.jpg', // Updated to public path
       technologies: ['React', 'Node.js', 'MySQL'],
       role: 'Frontend Developer',
       outcome: 'Increased client engagement by 70%.',
@@ -96,7 +89,7 @@ const ProjectPage = () => {
       description:
         'A personalized portfolio website showcasing my projects, skills, and contact information. Features an interactive UI for seamless navigation.',
       tags: ['HTML', 'CSS', 'JavaScript', 'React'],
-      image: portfolioImage,
+      image: '/images/portfolio-image.jpg', // Updated to public path
       technologies: ['HTML', 'CSS', 'JavaScript', 'React'],
       role: 'Full Stack Developer',
       outcome: 'Attracted multiple job interviews from potential clients.',
@@ -108,7 +101,7 @@ const ProjectPage = () => {
       description:
         'A SaaS hotel management system with modules for bookings, amenities exploration, and staff management.',
       tags: ['Flutter', 'Node.js', 'MySQL'],
-      image: cloudhavenImage,
+      image: '/images/cloudhaven.jpg', // Updated to public path
       technologies: ['Flutter', 'Node.js', 'MySQL'],
       role: 'Lead Developer',
       outcome: 'Enabled automation of hotel operations, increasing efficiency by 60%.',
@@ -120,7 +113,7 @@ const ProjectPage = () => {
       description:
         'A secure blockchain-based voting app leveraging Solana for transparent and efficient elections.',
       tags: ['Flutter', 'Node.js', 'MySQL', 'Solana Blockchain'],
-      image: electraImage,
+      image: '/images/Electra.jpg', // Updated to public path
       technologies: ['Flutter', 'Node.js', 'MySQL', 'Solana Blockchain'],
       role: 'Blockchain Developer',
       outcome: 'Provided a secure and tamper-proof voting platform.',

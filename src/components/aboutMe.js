@@ -13,7 +13,6 @@ import {
 } from '@mui/material';
 import CustomAppBar from './customAppBar';
 import { styled } from '@mui/system';
-import profilePic from './assets/kilel.jpg'; // Profile picture
 import Footer from './footer';
 import { createTheme } from '@mui/material/styles';
 
@@ -54,7 +53,7 @@ const AboutMe = () => {
       <Box sx={{ padding: 4, backgroundColor: '#f7f8fc', minHeight: '100vh' }}>
         {/* Introduction Section */}
         <Box sx={{ textAlign: 'center', marginBottom: 6 }}>
-          <ProfileAvatar src={profilePic} alt="Profile Picture" />
+          <ProfileAvatar src= '/images/kilel.jpg' alt="Profile Picture" />
           <Typography variant="h4" sx={{ fontWeight: 'bold', color: 'primary.main' }}>
             Deelan Kilel
           </Typography>

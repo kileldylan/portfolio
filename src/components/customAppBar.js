@@ -61,22 +61,22 @@ const CustomAppBar = () => {
 
           {/* Navigation Links for large screens */}
           <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
-            <Button color="inherit" component={Link} to="/">
+            <Button color="primary" component={Link} to="/">
               Home
             </Button>
-            <Button color="inherit" component={Link} to="/about">
+            <Button color="primary" component={Link} to="/about">
               About Me
             </Button>
-            <Button color="inherit" component={Link} to="/projects">
+            <Button color="primary" component={Link} to="/projects">
               Projects
             </Button>
-            <Button color="inherit" component={Link} to="/experience">
+            <Button color="primary" component={Link} to="/experience">
               Experience
             </Button>
-            <Button color="inherit" component={Link} to="/education">
+            <Button color="primary" component={Link} to="/education">
               Education
             </Button>
-            <Button color="inherit" component={Link} to="/contact">
+            <Button color="primary" component={Link} to="/contact">
               Contact
             </Button>
           </Box>
