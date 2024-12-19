@@ -84,7 +84,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Wahome Automotives',
+    title: 'Edulog Attendance System',
     description:
       'An automated attendance management system designed to simplify tracking and reporting for educational institutions.',
     tags: ['React', 'Node.js', 'MYSQL', 'API Design'],
@@ -93,7 +93,7 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Edulog Attendance System',
+    title: 'Wahome Automotives',
     description:
       'A car sales platform that allows users to browse, filter, and connect with sellers for a seamless vehicle purchasing experience.',
     tags: ['React', 'Node.js', 'MySQL'],
