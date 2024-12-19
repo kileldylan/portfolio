@@ -14,7 +14,7 @@ import { Helmet } from 'react-helmet';
 import { styled } from '@mui/system';
 import CustomAppBar from './customAppBar';
 import Footer from './footer';
-import { GlobalStyles, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { GlobalStyles, CssBaseline, ThemeProvider, createTheme} from '@mui/material';
 
 // Custom styling for Hero Section
 const HeroSection = styled(Box)(({ theme }) => ({
@@ -143,7 +143,26 @@ const theme = createTheme({
   },
 });
 
+const AnimatedButton = styled(Button)({
+  fontWeight: 'bold',
+  fontSize: '1rem',
+  padding: '12px 24px',
+  background: 'linear-gradient(to right, #007BFF, #00C6FF)',
+  color: '#FFFFFF',
+  borderRadius: '8px',
+  boxShadow: '0 4px 8px rgba(0, 123, 255, 0.4)',
+  transition: 'transform 0.3s, background 0.3s',
+  '&:hover': {
+    transform: 'scale(1.1)',
+    background: 'linear-gradient(to right, #0056B3, #004085)',
+  },
+});
 
+const ButtonContainer = styled(Box)({
+  display: 'flex',
+  justifyContent: 'center',
+  marginTop: '20px',
+});
 
 const Home = () => {
   return (
@@ -305,6 +324,13 @@ const Home = () => {
               </Grid>
             ))}
           </Grid>
+
+                    {/* View All Projects Button */}
+                    <ButtonContainer>
+            <AnimatedButton href="/projects">
+              View All Projects
+            </AnimatedButton>
+          </ButtonContainer>
         </Container>
 
 {/* Tech Stack & Skills Section */}
@@ -367,6 +393,28 @@ const Home = () => {
             </SkillCategory>
           </Container>
         </SkillsSection>
+
+      {/* Experience Section */}
+      <Container sx={{ marginTop: '60px', textAlign: 'center' }}>
+          <Typography variant="h4" gutterBottom>
+            My Experience
+          </Typography>
+          <Typography variant="body1" sx={{ marginBottom: 3 }}>
+            Learn more about my professional experience and accomplishments.
+          </Typography>
+          <Button
+            variant="contained"
+            size="large"
+            sx={{
+              backgroundColor: '#007BFF',
+              color: '#FFFFFF',
+              '&:hover': { backgroundColor: '#0056B3' },
+            }}
+            href="/experience"
+          >
+            View Experience
+          </Button>
+        </Container>
 
       {/* Testimonials Section */}
       <TestimonialSection>
